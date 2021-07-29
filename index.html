@@ -250,7 +250,12 @@
 				<p><b>And thank you wholeheartedly for your interest on my work!</b></p>
 				<a name="formulario"/>
 				<p style="font-size: 1.6em;"><a href="mailto:art@himalaia.site">art@himalaia.site</a></p>
-				<form id="ajax-contact" method="post" action="https://algonaut.herokuapp.com/viral-mail">
+				<form id="ajax-contact" method="post" action="https://algonaut.herokuapp.com/viral-mail"
+					  msg-sending="Sending the message. One moment."
+					  msg-success="Message sent! Will reply shortly."
+					  msg-failure="Message not sent. Please try again."
+					  msg-error="Oops! There was an error and the message could not be sent."
+				>
 					<div class="input-field">
 						<input type="text" class="form-control" name="name" id="name" required placeholder="Name">
 					</div>

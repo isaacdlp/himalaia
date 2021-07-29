@@ -21,7 +21,17 @@ $(function() {
         // Serialize the form data.
         var formData = $(form).serialize();
 
-        form_msg('bg-warn', 'Enviando el mensaje. Un momento');
+        var msgSending = 'Enviando el mensaje. Un momento';
+        var msgSuccess = 'Mensaje enviado. Responderemos en breve';
+        var msgFailure = 'Mensaje no enviado. Por favor reinténtelo';
+        var msgError = 'Oops! Hubo un error y no se pudo enviar su mensaje'
+
+        msgSending = form.attr("msg-sending");
+        msgSuccess = form.attr("msg-success");
+        msgFailure = form.attr("msg-failure");
+        msgError = form.attr("msg-error");
+
+        form_msg('bg-warn', msgSending);
         // Submit the form using AJAX.
         $.ajax({
             type: 'POST',
@@ -31,10 +41,10 @@ $(function() {
         .done(function(response) {
             if (response.status == "success") {
                 // Make sure that the formMessages div has the 'success' class.
-                form_msg('bg-success', 'Mensaje enviado. Responderemos en breve');
+                form_msg('bg-success', msgSuccess);
             } else {
                 // Make sure that the formMessages div has the 'success' class.
-                form_msg('bg-danger', 'Mensaje no enviado. Por favor reinténtelo');
+                form_msg('bg-danger', msgFailure);
             }
 
             // Clear the form.
@@ -42,7 +52,7 @@ $(function() {
         })
         .fail(function(data) {
             // Make sure that the formMessages div has the 'error' class.
-            form_msg('bg-danger', 'Oops! Hubo un error y no se pudo enviar su mensaje');
+            form_msg('bg-danger', msgError);
         });
 
     });
