@@ -250,12 +250,13 @@
 				<p><b>And thank you wholeheartedly for your interest on my work!</b></p>
 				<a name="formulario"/>
 				<p style="font-size: 1.6em;"><a href="mailto:art@himalaia.site">art@himalaia.site</a></p>
-				<form id="ajax-contact" method="post" action="https://algonaut.herokuapp.com/viral-mail"
+				<form id="ajax-contact" method="post" action="https://algonaut.herokuapp.com/hima-mail"
 					  msg-sending="Sending the message. One moment."
 					  msg-success="Message sent! Will reply shortly."
 					  msg-failure="Message not sent. Please try again."
 					  msg-error="Oops! There was an error and the message could not be sent."
 				>
+					<input type="hidden" name="token" id="token"/>
 					<div class="input-field">
 						<input type="text" class="form-control" name="name" id="name" required placeholder="Name">
 					</div>
@@ -293,7 +294,8 @@
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
 
-		<script src="js/form.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js?render=6Ld1dMwbAAAAALM4WzgGBZzCrxpDwPOpVbViieC-"></script>
+		<script src="assets/js/form.js"></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161822504-1"></script>
